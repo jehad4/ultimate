@@ -30,8 +30,8 @@ class EnterpriseConfigurationManager {
              * Configure your Lavalink server for audio processing
              */
             lavalink: {
-                host: EnvironmentVariableProcessor.LAVALINK_HOST || "pnode1.danbot.host", 
-                port: Number(EnvironmentVariableProcessor.LAVALINK_PORT) || 1351, // Fixed: port should be number
+                host: EnvironmentVariableProcessor.LAVALINK_HOST || "nexus.voidhosting.vip", 
+                port: Number(EnvironmentVariableProcessor.LAVALINK_PORT) || 6004, // Fixed: port should be number
                 password: EnvironmentVariableProcessor.LAVALINK_PASSWORD || "cocaine", 
                 secure: EnvironmentVariableProcessor.LAVALINK_SECURE === 'false' // Fixed: comparison returns boolean
             },
