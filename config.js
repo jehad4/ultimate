@@ -7,7 +7,7 @@
  * @author GlaceYT
  */
 
-const EnvironmentVariableProcessor = require('process').env;
+const EnvironmentVariableProcessor = process.env; // Fixed: require('process').env → process.env
 
 class EnterpriseConfigurationManager {
     constructor() {
@@ -31,9 +31,9 @@ class EnterpriseConfigurationManager {
              */
             lavalink: {
                 host: EnvironmentVariableProcessor.LAVALINK_HOST || "pnode1.danbot.host", 
-                port: EnvironmentVariableProcessor.LAVALINK_PORT || 1351,       
+                port: Number(EnvironmentVariableProcessor.LAVALINK_PORT) || 1351, // Fixed: port should be number
                 password: EnvironmentVariableProcessor.LAVALINK_PASSWORD || "cocaine", 
-                secure: EnvironmentVariableProcessor.LAVALINK_SECURE === 'true' || false
+                secure: EnvironmentVariableProcessor.LAVALINK_SECURE === 'true' // Fixed: comparison returns boolean
             },
             
             /**
@@ -101,7 +101,3 @@ module.exports = primaryApplicationConfiguration;
  * Never share your bot token or database URI publicly!
  * Use environment variables in production!
  */
-
-
-
-
